@@ -16,6 +16,15 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { HomeComponent } from './Web/home/home.component';
 import { NosotrosComponent } from './Web/nosotros/nosotros.component';
 import { ContactoComponent } from './Web/contacto/contacto.component';
+
+
+
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { ModalComponent } from './Componentes/modal/modal.component';
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +32,8 @@ import { ContactoComponent } from './Web/contacto/contacto.component';
     SideNavComponent,
     HomeComponent,
     NosotrosComponent,
-    ContactoComponent
+    ContactoComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +44,9 @@ MatSidenavModule,
 MatMenuModule,
 MatListModule,
 MatIconModule,
-MatTabsModule
+MatTabsModule,
+MdbModalModule,
+MdbCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,3 +7,11 @@
   --secondary:#007832;
   --dark: #00517D;
 }
+.container,
+.container-fluid,
+.row,
+.col-md-12 {
+  margin: 0px;
+  padding: 0px;
+}
+

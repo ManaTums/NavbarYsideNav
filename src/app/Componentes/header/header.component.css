@@ -4,10 +4,20 @@ img {
 a {
   font-size: 1rem;
 }
+span{
+  color: #fff;
+}
 ::ng-deep .mat-mdc-tab-link .mdc-tab__text-label{
-  color: rgba(0, 0, 0, 0.5) !important;
+  color: #fff !important;
 }
 /* Cambiar el color del Active */
 ::ng-deep .mat-mdc-tab-link .mdc-tab-indicator__content--underline {
-  border-color: red !important;
+  border-color: #fff !important;
+}
+#header{
+  background: linear-gradient(to left, blue 60%, #fff 40%);
+  border-radius: 250px 0px 0px 250px;
+}
+.wave::after {
+
 }
