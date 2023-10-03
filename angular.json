@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/navbar-yside-nav",
+            "outputPath": "dist/NavbarYsideNav/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -97,6 +97,60 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/NavbarYsideNav/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "NavbarYsideNav:build:development",
+              "serverTarget": "NavbarYsideNav:server:development"
+            },
+            "production": {
+              "browserTarget": "NavbarYsideNav:build:production",
+              "serverTarget": "NavbarYsideNav:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "NavbarYsideNav:build:production",
+              "serverTarget": "NavbarYsideNav:server:production"
+            },
+            "development": {
+              "browserTarget": "NavbarYsideNav:build:development",
+              "serverTarget": "NavbarYsideNav:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

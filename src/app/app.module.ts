@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, TransferState } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,14 @@ import { ModalComponent } from './Componentes/modal/modal.component';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 
 
+// import ngx-translate and the http loader
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+import { TransferHttpCacheModule } from '@nguniversal/common';
+import { translateBrowserLoaderFactory } from '../shared/loaders/translate-browser.loader';
+
 
 @NgModule({
   declarations: [
@@ -36,9 +44,20 @@ import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
     BrowserAnimationsModule,
     AngularMaterialModule,
     MdbModalModule,
-    MdbCarouselModule
+    MdbCarouselModule,
+  // ngx-translate and the loader module
+  HttpClientModule,
+  TranslateModule.forRoot({
+    loader: {
+        provide: TranslateLoader,
+        useFactory: (translateBrowserLoaderFactory),
+        deps: [HttpClient, TransferState]
+    }
+})
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
