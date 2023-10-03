@@ -15,9 +15,12 @@ span{
   border-color: #fff !important;
 }
 #header{
-  background: linear-gradient(to left, blue 60%, #fff 40%);
-  border-radius: 250px 0px 0px 250px;
-}
-.wave::after {
-
+ /* background: linear-gradient(to left, blue 60%, #fff 40%);
+  border-radius: 200px 0px 0px 0px;
+-webkit-border-radius: 200px 0px 0px 0px;
+-moz-border-radius: 200px 0px 0px 0px;
+*/
+/*background-image: linear-gradient(-155deg,rgba(74,148,214,.4) 70%,rgba(255,255,255,.08) 15%),linear-gradient(258deg,rgba(87,238,255,.1),rgba(77,108,211,.2));
+*/
+background:linear-gradient(-75deg,rgba(74,148,214,.4) 60%,rgba(255,255,255,.08) 60%);
 }
